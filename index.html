@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>朝陽企管進修部 報名資料準備表</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang TC","Microsoft JhengHei","Heiti TC",sans-serif;background:#edecea;color:#1a1a1a;min-height:100vh;padding:2.5rem 1rem}
+
+.wm{display:none;position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;align-items:center;justify-content:center}
+.wm-text{font-size:58px;font-weight:700;color:rgba(26,50,82,0.055);white-space:nowrap;transform:rotate(-22deg);letter-spacing:8px;user-select:none}
+
+.card{max-width:780px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(0,0,0,0.10)}
+
+/* Header */
+.hdr{background:#1a3252;position:relative;overflow:hidden;padding:36px 40px 32px}
+.hdr-deco{position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.hdr-deco2{position:absolute;bottom:-60px;right:60px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.03)}
+.hdr-deco3{position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,#2ec4a0,#1a7fa6)}
+.hdr-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.hdr-badge{font-size:10px;font-weight:500;letter-spacing:2.5px;color:#2ec4a0;background:rgba(46,196,160,0.12);padding:4px 10px;border-radius:20px;border:1px solid rgba(46,196,160,0.3)}
+.hdr-only{font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.5px}
+.hdr h1{font-size:30px;font-weight:400;color:#fff;letter-spacing:2px;margin-bottom:8px;line-height:1.35}
+.hdr h1 strong{font-weight:600;color:#2ec4a0}
+.hdr-sub{font-size:13px;color:rgba(255,255,255,0.42);letter-spacing:0.5px}
+
+/* Notice */
+.notice{background:#fff8ed;border-left:4px solid #e8a020;padding:20px 24px;display:flex;gap:14px;align-items:flex-start}
+.notice-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.notice-body{}
+.notice-title{font-size:15px;font-weight:700;color:#b56a00;margin-bottom:8px;letter-spacing:0.5px}
+.notice-text{font-size:13.5px;color:#7a4e00;line-height:2}
+.notice-text strong{font-weight:600}
+.notice-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;font-weight:500;color:#fff;background:#1a3252;padding:8px 18px;border-radius:8px;text-decoration:none;letter-spacing:0.5px}
+.notice-link:hover{background:#0f1f36}
+
+/* Encourage */
+.encourage{background:linear-gradient(135deg,#1a3252 0%,#174060 100%);padding:22px 28px;display:flex;align-items:center;gap:18px}
+.enc-icon{font-size:28px;flex-shrink:0}
+.enc-body{}
+.enc-title{font-size:15px;font-weight:600;color:#2ec4a0;margin-bottom:5px;letter-spacing:0.5px}
+.enc-text{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.85}
+
+/* Body */
+.body{padding:2.25rem 2.5rem 2.75rem}
+
+/* Steps */
+.steps{display:flex;gap:0;margin:0 0 2.25rem;border:1.5px solid #eee;border-radius:12px;overflow:hidden}
+.step{flex:1;padding:14px 12px;text-align:center;position:relative}
+.step:not(:last-child){border-right:1.5px solid #eee}
+.step.active{background:#f0faf7}
+.step-num{font-size:10px;font-weight:600;letter-spacing:1px;color:#bbb;margin-bottom:4px}
+.step.active .step-num{color:#2ec4a0}
+.step-text{font-size:12px;color:#aaa;line-height:1.6}
+.step.active .step-text{color:#0f6e56}
+.step-arrow{position:absolute;right:-8px;top:50%;transform:translateY(-50%);font-size:13px;color:#ddd;z-index:1}
+
+/* Section */
+.sec{margin-bottom:2.4rem}
+.sec-hd{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.sec-num{width:27px;height:27px;border-radius:50%;background:#1a3252;color:#fff;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-title{font-size:13px;font-weight:500;color:#1a3252;letter-spacing:2px}
+.sec-line{flex:1;height:1px;background:#efefef}
+
+/* Fields */
+.row{display:grid;gap:22px;margin-bottom:22px}
+.row.c2{grid-template-columns:1fr 1fr}
+.row.c3{grid-template-columns:1fr 1fr 1fr}
+.f{display:flex;flex-direction:column;gap:7px}
+.f label{font-size:12px;color:#b0b0b0;letter-spacing:0.5px}
+.f input,.f select,.f textarea{border:none;border-bottom:1.5px solid #e8e8e8;padding:8px 0;font-size:15px;font-family:inherit;background:transparent;color:#1a1a1a;outline:none;transition:border-color 0.2s}
+.f input:focus,.f select:focus,.f textarea:focus{border-bottom-color:#2ec4a0}
+.f input::placeholder,.f textarea::placeholder{color:#ccc}
+.f select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23bbb'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;padding-right:20px}
+.f textarea{resize:vertical;min-height:96px;padding-top:6px;line-height:1.8}
+
+.radio-group{display:flex;gap:20px;padding-top:10px}
+.radio-group label{font-size:15px;display:flex;align-items:center;gap:6px;cursor:pointer}
+.radio-group input[type=radio]{accent-color:#2ec4a0;width:15px;height:15px}
+
+/* Chips */
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px}
+.chip{padding:7px 16px;border-radius:24px;border:1.5px solid #e5e5e5;font-size:13px;cursor:pointer;background:#f9f9f8;color:#666;transition:all 0.15s;user-select:none}
+.chip:hover{border-color:#2ec4a0;color:#1a7a68}
+.chip.on{background:#e8faf5;border-color:#2ec4a0;color:#0f6e56;font-weight:500}
+#chip-warn{font-size:12px;color:#c0392b;margin-top:8px;display:none}
+
+/* Template bar */
+.tmpl-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:11px}
+.tmpl-label{font-size:12px;color:#bbb;white-space:nowrap}
+.tmpl-btn{font-size:12px;padding:4px 13px;border-radius:14px;border:1px solid #e0e0e0;background:transparent;cursor:pointer;color:#888;font-family:inherit;transition:all 0.12s}
+.tmpl-btn:hover{background:#f5f5f3;border-color:#aaa;color:#444}
+.hint{font-size:12px;color:#bbb;margin-top:6px}
+
+/* Upload */
+.upload-zone{border:2px dashed #e0e0e0;border-radius:12px;padding:30px;text-align:center;cursor:pointer;transition:all 0.2s;position:relative}
+.upload-zone:hover{background:#f5fdf9;border-color:#2ec4a0}
+.upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.upload-icon{font-size:30px;margin-bottom:10px;color:#ddd}
+.upload-text{font-size:14px;color:#888;margin-bottom:5px}
+.upload-sub{font-size:12px;color:#bbb;line-height:2}
+.img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:14px}
+.img-item{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;border:1.5px solid #eee}
+.img-item img{width:100%;height:100%;object-fit:cover}
+.img-item .rm{position:absolute;top:5px;right:5px;background:rgba(0,0,0,0.5);color:white;border:none;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:13px;line-height:22px;text-align:center;padding:0}
+.img-caption{font-size:10px;text-align:center;color:#aaa;padding:4px;background:#f9f9f8;border-top:1px solid #eee;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* PDF Footer */
+.pdf-footer{background:#f5fdf9;border-top:2px solid #2ec4a0;padding:24px 28px;text-align:center}
+.pdf-footer-title{font-size:13px;font-weight:600;color:#0f6e56;margin-bottom:6px;letter-spacing:0.5px}
+.pdf-footer-desc{font-size:12.5px;color:#3a8a6e;line-height:1.8;margin-bottom:18px}
+.pdf-footer-desc strong{font-weight:600;color:#0a5a48}
+.pdf-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn-pdf{background:#1a3252;color:white;border:none;padding:13px 40px;font-size:15px;font-family:inherit;border-radius:10px;cursor:pointer;letter-spacing:1px;display:flex;align-items:center;gap:8px}
+.btn-pdf:hover{background:#0f1f36}
+.btn-pdf-icon{font-size:16px}
+.btn-reset{background:transparent;color:#aaa;border:1.5px solid #e0e0e0;padding:13px 22px;font-size:14px;font-family:inherit;border-radius:10px;cursor:pointer}
+.btn-reset:hover{background:#f9f9f8;color:#666}
+
+/* Print */
+@media print{
+  body{background:white;padding:0}
+  .wm{display:flex!important}
+  .card{box-shadow:none;border-radius:0;max-width:100%}
+  .hdr{padding:22px 32px 18px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hdr h1{font-size:22px!important}
+  .notice{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .notice-link{display:none!important}
+  .encourage{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .steps{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .body{padding:1.25rem 2rem 1.5rem}
+  .pdf-footer,.tmpl-row,.upload-zone,.rm,.btn-pdf,.btn-reset,.pdf-actions{display:none!important}
+  .f input,.f select,.f textarea{border-bottom:1px solid #ccc!important;font-size:13px!important}
+  .chip:not(.on){display:none!important}
+  .chip.on{background:#e8faf5!important;border:1px solid #2ec4a0!important;color:#0f6e56!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sec{margin-bottom:1.5rem}
+  .img-grid{grid-template-columns:repeat(4,1fr)}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div class="wm"><div class="wm-text">朝陽科技大學 企業管理系</div></div>
+
+<div class="card">
+
+  <div class="hdr">
+    <div class="hdr-deco"></div>
+    <div class="hdr-deco2"></div>
+    <div class="hdr-deco3"></div>
+    <div class="hdr-tag">
+      <span class="hdr-badge">CYUT · BA</span>
+      <span class="hdr-only">本表單僅供朝陽企管進修部報名使用</span>
+    </div>
+    <h1>朝陽企管<br><strong>進修部報名資料</strong></h1>
+    <div class="hdr-sub">朝陽科技大學 企業管理系 · 報名資料準備表</div>
+  </div>
+
+  <div class="notice">
+    <div class="notice-icon">⚠️</div>
+    <div class="notice-body">
+      <div class="notice-title">填完此表單，不代表完成報名</div>
+      <div class="notice-text">
+        <strong>此表單</strong>是幫助您整理報名資料的輔助工具，填寫完成後請將<strong>此表單輸出成 PDF</strong>，<br>
+        並前往<strong>朝陽科技大學進修部招生系統</strong>完成正式報名，將 PDF 上傳至系統指定欄位。<br>
+        報名以<strong>招生系統收件為準</strong>，請務必完成線上報名程序。
+      </div>
+      <a class="notice-link" href="https://rs.cyut.edu.tw/Alone/Account/Register" target="_blank">
+        前往進修部招生系統正式報名 →
+      </a>
+    </div>
+  </div>
+
+  <div class="encourage">
+    <div class="enc-icon">🌱</div>
+    <div class="enc-body">
+      <div class="enc-title">踏出這一步，就是最好的開始</div>
+      <div class="enc-text">無論您現在身在何處、有什麼樣的背景，朝陽企管都歡迎每一位想要繼續成長的你。<br>我們相信，這裡的學習將為您打開更多可能，也期待與您一起走這段進修的旅程。</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="steps">
+      <div class="step active">
+        <div class="step-num">STEP 1</div>
+        <div class="step-text">填寫此表單<br>整理個人資料</div>
+        <span class="step-arrow">›</span>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 2</div>
+        <div class="step-text">將此表單<br>輸出成 PDF</div>
+        <span class="step-arrow">›</span>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 3</div>
+        <div class="step-text">前往招生系統<br>完成正式報名</div>
+        <span class="step-arrow">›</span>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 4</div>
+        <div class="step-text">上傳 PDF<br>至招生系統</div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hd"><div class="sec-num">1</div><div class="sec-title">基本資料</div><div class="sec-line"></div></div>
+      <div class="row c3">
+        <div class="f"><label>姓名</label><input type="text" placeholder="請輸入姓名"></div>
+        <div class="f"><label>出生年次（民國）</label><input type="text" placeholder="例：75"></div>
+        <div class="f"><label>性別</label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender"> 男</label>
+            <label><input type="radio" name="gender"> 女</label>
+            <label><input type="radio" name="gender"> 其他</label>
+          </div>
+        </div>
+      </div>
+      <div class="row c2">
+        <div class="f"><label>聯絡電話</label><input type="text" placeholder="09xx-xxx-xxx"></div>
+        <div class="f"><label>電子郵件</label><input type="email" placeholder="example@mail.com"></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hd"><div class="sec-num">2</div><div class="sec-title">學歷背景</div><div class="sec-line"></div></div>
+      <div class="row c3">
+        <div class="f"><label>畢業學校</label><input type="text" placeholder="學校名稱"></div>
+        <div class="f"><label>科系 / 學科</label><input type="text" placeholder="就讀科系"></div>
+        <div class="f"><label>就讀狀態</label>
+          <select>
+            <option value="">請選擇</option>
+            <option>已畢業</option>
+            <option>肄業</option>
+            <option>就讀中</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hd"><div class="sec-num">3</div><div class="sec-title">個性特質（最多選 6 項）</div><div class="sec-line"></div></div>
+      <div class="chips">
+        <div class="chip" onclick="toggleChip(this)">積極主動</div>
+        <div class="chip" onclick="toggleChip(this)">責任感強</div>
+        <div class="chip" onclick="toggleChip(this)">樂於助人</div>
+        <div class="chip" onclick="toggleChip(this)">溝通協調</div>
+        <div class="chip" onclick="toggleChip(this)">適應力強</div>
+        <div class="chip" onclick="toggleChip(this)">創新思維</div>
+        <div class="chip" onclick="toggleChip(this)">細心謹慎</div>
+        <div class="chip" onclick="toggleChip(this)">團隊合作</div>
+        <div class="chip" onclick="toggleChip(this)">抗壓性高</div>
+        <div class="chip" onclick="toggleChip(this)">學習意願強</div>
+        <div class="chip" onclick="toggleChip(this)">獨立自主</div>
+        <div class="chip" onclick="toggleChip(this)">親和力佳</div>
+        <div class="chip" onclick="toggleChip(this)">邏輯分析</div>
+        <div class="chip" onclick="toggleChip(this)">時間管理</div>
+        <div class="chip" onclick="toggleChip(this)">領導力</div>
+        <div class="chip" onclick="toggleChip(this)">耐心穩定</div>
+        <div class="chip" onclick="toggleChip(this)">執行力強</div>
+        <div class="chip" onclick="toggleChip(this)">好奇心旺盛</div>
+      </div>
+      <div id="chip-warn">最多選 6 項</div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hd"><div class="sec-num">4</div><div class="sec-title">報考動機</div><div class="sec-line"></div></div>
+      <div class="tmpl-row">
+        <span class="tmpl-label">套用版模</span>
+        <button class="tmpl-btn" onclick="applyT('motive','career')">職涯發展型</button>
+        <button class="tmpl-btn" onclick="applyT('motive','interest')">興趣探索型</button>
+        <button class="tmpl-btn" onclick="applyT('motive','upgrade')">進修充實型</button>
+        <button class="tmpl-btn" onclick="applyT('motive','switch')">轉換跑道型</button>
+      </div>
+      <div class="f">
+        <textarea id="motive" placeholder="請說明報考朝陽科技大學企業管理系進修部的動機……"></textarea>
+        <div class="hint" id="mc">0 字</div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hd"><div class="sec-num">5</div><div class="sec-title">自我介紹</div><div class="sec-line"></div></div>
+      <div class="tmpl-row">
+        <span class="tmpl-label">套用版模</span>
+        <button class="tmpl-btn" onclick="applyT('intro','personality')">個性導向</button>
+        <button class="tmpl-btn" onclick="applyT('intro','experience')">經歷導向</button>
+        <button class="tmpl-btn" onclick="applyT('intro','learning')">學習導向</button>
+      </div>
+      <div class="f">
+        <textarea id="intro" placeholder="簡短介紹個性、經歷或學習目標……"></textarea>
+        <div class="hint" id="ic">0 字</div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hd"><div class="sec-num">6</div><div class="sec-title">附件照片（選填）</div><div class="sec-line"></div></div>
+      <div class="hint" style="margin-bottom:13px">可附上個人近照、活動參與、獲獎或證書照片，協助審查委員更全面了解您</div>
+      <div class="upload-zone">
+        <input type="file" accept="image/*" multiple onchange="handleImgs(this.files)">
+        <div class="upload-icon">＋</div>
+        <div class="upload-text">點擊上傳照片（可多選）</div>
+        <div class="upload-sub">個人照 · 活動紀錄 · 證書 · 獲獎</div>
+      </div>
+      <div class="img-grid" id="img-preview"></div>
+    </div>
+
+  </div>
+
+  <!-- PDF Footer -->
+  <div class="pdf-footer">
+    <div class="pdf-footer-title">填寫完成後，請將此表單輸出成 PDF</div>
+    <div class="pdf-footer-desc">
+      輸出的 PDF 請上傳至<strong>朝陽科技大學進修部招生系統</strong>，完成正式報名程序。<br>
+      提醒您：<strong>此表單本身不具報名效力</strong>，以招生系統收件為準。
+    </div>
+    <div class="pdf-actions">
+      <button class="btn-reset" onclick="resetForm()">清除重填</button>
+      <button class="btn-pdf" onclick="window.print()">
+        <span class="btn-pdf-icon">↓</span> 輸出此表單為 PDF
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const T={
+  motive:{
+    career:'目前從事【職業或職務】工作，深感管理知識對職涯發展的重要性。希望透過朝陽科技大學企業管理系進修部的課程，系統性地提升管理視野與決策能力，為未來的晉升與發展奠定更穩固的基礎。',
+    interest:'長期以來對企業運作與組織管理懷有高度興趣，在工作或生活中常觀察到各種管理現象，卻苦於缺乏系統化知識加以詮釋。期望能透過朝陽科技大學企管系的課程，將這份興趣轉化為真正可應用的專業能力。',
+    upgrade:'工作多年後，深刻體認持續進修的重要性。希望利用進修部提供的學習機會，充實自我的管理專業知能，同時拓展跨領域的人脈，並取得學位以增加職場上的競爭優勢。',
+    switch:'近年工作內容逐漸與企業管理領域接軌，希望藉由朝陽科技大學企管系的正規課程補強理論基礎，讓自己在轉型過程中更具信心，並能將所學即時應用於工作實務，加速職涯轉換的成效。'
+  },
+  intro:{
+    personality:'我是一個【個性特質，例如：積極、細心】的人，在工作與生活中習慣【具體行為，例如：主動溝通、協助他人】。身邊的朋友常說我【他人評價】，這也讓我在【場景】中得以發揮所長，並成為我持續進修、精進自我的動力來源。',
+    experience:'過去【N】年來，主要從事【工作或活動類型】，累積了【成果或技能】方面的實務經驗。這段歷程讓我體認到【心得或成長】的重要，也讓我意識到系統性管理知識的價值，因此決定報考朝陽科技大學企業管理系進修部，期許自己能更上一層樓。',
+    learning:'我始終相信學習是自我成長最直接的途徑。在【某段過去的經歷】中，發現自己對【某主題或領域】懷有強烈的求知欲。朝陽科技大學企業管理系進修部的課程架構與師資陣容，讓我相信這裡能提供我所需的知識視角，協助我在職場上持續突破與成長。'
+  }
+};
+function applyT(f,k){const el=document.getElementById(f);el.value=T[f][k];updateCount(f);}
+function updateCount(id){const el=document.getElementById(id);const c=document.getElementById(id==='motive'?'mc':'ic');if(c)c.textContent=el.value.length+' 字';}
+document.getElementById('motive').addEventListener('input',()=>updateCount('motive'));
+document.getElementById('intro').addEventListener('input',()=>updateCount('intro'));
+function toggleChip(el){const n=document.querySelectorAll('.chip.on').length;const w=document.getElementById('chip-warn');if(el.classList.contains('on')){el.classList.remove('on');w.style.display='none';}else{if(n>=6){w.style.display='block';return;}el.classList.add('on');w.style.display='none';}}
+function handleImgs(files){const g=document.getElementById('img-preview');Array.from(files).forEach(f=>{if(!f.type.startsWith('image/'))return;const r=new FileReader();r.onload=e=>{const d=document.createElement('div');d.className='img-item';const name=f.name.replace(/\.[^.]+$/,'').substring(0,12);d.innerHTML=`<img src="${e.target.result}" alt="${name}"><button class="rm" onclick="this.parentNode.remove()">×</button><div class="img-caption">${name}</div>`;g.appendChild(d);};r.readAsDataURL(f);});}
+function resetForm(){if(!confirm('確定要清除所有填寫內容？'))return;document.querySelectorAll('input[type=text],input[type=email],textarea,select').forEach(el=>el.value='');document.querySelectorAll('input[type=radio]').forEach(el=>el.checked=false);document.querySelectorAll('.chip.on').forEach(el=>el.classList.remove('on'));document.getElementById('chip-warn').style.display='none';document.getElementById('mc').textContent='0 字';document.getElementById('ic').textContent='0 字';document.getElementById('img-preview').innerHTML='';}
+</script>
+</body>
+</html>
